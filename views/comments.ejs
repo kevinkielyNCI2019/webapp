@@ -1,0 +1,58 @@
+<% include ../partials/header.ejs %>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Comments and Feedback</h3>
+  </div>
+  
+ 
+ <div class="w3-row-padding w3-grayscale">
+      
+      <% jsoncomment.forEach(function(jsoncomment) { %>
+      
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      
+      <h3>Comment Id: <%= jsoncomment.id %></h3>
+      <p class="w3-opacity">Name: <%= jsoncomment.name %></p>
+      <p>Customer Number: <%= jsoncomment.custnum %></p>
+       <p>Email Address: <%= jsoncomment.emailadd %></p>
+    <p>Comments: <%= jsoncomment.feedback %></p>
+    <p>Bike Rating (out of 5): <%= jsoncomment.rating %></p>
+    
+         <p><a href="/editcomment/<%= jsoncomment.id %>" class="w3-button w3-light-grey w3-block">Edit this comment</a></p>
+         
+         <p class="w3-button w3-light-grey w3-block" id="doit<%= jsoncomment.id %>">Delete this comment</a>
+  <p id="yes<%= jsoncomment.id %>" style="display:none">
+  Are you sure?
+                        <a href="/deletecomment/<%= jsoncomment.id %>" class="w3-button w3-light-grey w3-block">Yes</a>
+             </p>
+             
+             <script>
+               $(document).ready(function(){
+                 $("#doit<%= jsoncomment.id %>").click(function(){
+                   $("#yes<%= jsoncomment.id %>").slideToggle(1000);
+                   
+                 })
+                 
+               })
+               
+             </script>
+         
+     
+    </div>
+    
+    
+    <% }); %>
+    
+  </div>
+  
+   <a href="/addcomment" class="w3-button w3-black">Add Comment</a>
+
+
+</div>
+
+
+<% include ../partials/footer.ejs %>

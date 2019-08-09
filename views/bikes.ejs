@@ -1,0 +1,61 @@
+<% include ../partials/header.ejs %>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+    
+    <div class="w3-container w3-padding-32" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Our Bikes</h3>
+    <a href="/bikesroad" class="w3-button w3-light-grey">Road</a> <a href="/bikesmtb" class="w3-button w3-light-grey">Mountain</a> 
+    <a href="/bikeshybrid" class="w3-button w3-light-grey">Hybrid</a> <a href="/bikesclassic" class="w3-button w3-light-grey">Classic</a> 
+  </div>
+  
+  <div class="w3-row-padding">
+      
+      <% result.forEach(function(mybike) { %>
+      
+      <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding"><%= mybike.Mtb_name %></div>
+        <img src="/<%= mybike.Mtb_image %>" style="width:100%">
+        <p><a href="/bikes/<%= mybike.Id %>" class="w3-button w3-light-grey w3-block">View more details</a></p>
+        <p><b>ID: </b><%= mybike.Id %><br/>
+        <b>Price: €</b><%= mybike.Mtb_price %><br/>
+        <b>Description: </b><%= mybike.Mtb_description %><br/>
+        <b>Category: </b><%= mybike.Mtb_cat %>
+        </p>
+        <p><a href="/editbike/<%= mybike.Id %>" class="w3-button w3-light-grey w3-block">Edit this bike</a></p>
+        
+        
+        <p class="w3-button w3-light-grey w3-block" id="doit<%= mybike.Id %>">Delete this bike</a>
+  <p id="yes<%= mybike.Id %>" style="display:none">
+  Are you sure?
+                        <a href="/deletebike/<%= mybike.Id %>" class="w3-button w3-light-grey w3-block">Yes</a>
+             </p>
+             
+             <script>
+               $(document).ready(function(){
+                 $("#doit<%= mybike.Id %>").click(function(){
+                   $("#yes<%= mybike.Id %>").slideToggle(1000);
+                   
+                 })
+                 
+               })
+               
+             </script>
+        
+        
+      </div>
+    </div>
+      
+      <% }); %>
+      
+      
+      
+  </div>
+    
+
+ 
+</div>
+
+
+<% include ../partials/footer.ejs %>

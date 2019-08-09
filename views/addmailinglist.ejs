@@ -1,0 +1,29 @@
+<% include ../partials/header.ejs %>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Add your details to our Mailing List</h3>
+  
+   <form accept-charset="UTF-8" action="/addmailinglist" method="post">  
+      
+                    <label for="page_ml_name">Your Name</label>
+                    <input class="w3-input w3-section w3-border" name="page_ml_name" type="text" placeholder="Enter your name", required pattern='[A-Za-z\s]{1,35}' title='Please enter only letters' />
+                    
+                    <label for="page_ml_emailadd">Email Address</label> 
+                    <input class="w3-input w3-section w3-border" name="page_ml_emailadd" type="text" placeholder="Enter your email address", required pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' title='Please enter valid email address' />
+                   
+      
+      <button class="button">Add Your Details</button>
+      
+    </form>
+  
+  </div>
+  <a href="/mailinglist" class="w3-button w3-black">View Mailing List</a>
+ 
+</div>
+
+
+<% include ../partials/footer.ejs %>

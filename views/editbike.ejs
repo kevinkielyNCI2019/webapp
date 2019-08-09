@@ -1,0 +1,49 @@
+<% include ../partials/header.ejs %>
+
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Edit Mountain Bike</h3>
+    
+    <% result.forEach(function(mtb_bike) { %>
+  
+   <form  accept-charset="UTF-8" style="display: inline-block; width: 90%;" action="/editbike/<%= mtb_bike.Id %>" method="post" enctype="multipart/form-data" id="uploadForm" ref="uploadForm">  
+      
+                    <label for="page_mtb_bikename">Bike Name:</label>
+                    <input class="w3-input w3-section w3-border" name="page_mtb_bikename" type="text" value="<%= mtb_bike.Mtb_name %>", required pattern='[A-Za-z\s]{1,35}' title='Please enter only letters'   />
+                    
+                    <label for="page_mtb_bikeprice">Bike Price:</label> 
+                    <input class="w3-input w3-section w3-border" name="page_mtb_bikeprice" type="text" value="<%= mtb_bike.Mtb_price %>", required pattern='[0-9]{1,4}' title='Please enter numbers only'  />
+                    
+                  
+                    <label for="page_mtb_bikeimage">Bike Image:</label>
+                    <input type="file" class="button" type="text" name="sampleFile" required/>
+                    
+                    <br/><br/>
+                    <label for="page_mtb_bikedesc">Bike Description:</label> 
+                    <input class="w3-input w3-section w3-border" name="page_mtb_bikedesc" type="text" value="<%= mtb_bike.Mtb_description %>", required pattern='[A-Za-z\s]{1,255}' title='Please enter only letters in your comments'  />
+      
+                    <label for="page_mtb_bikecat">Bike Category:</label>
+                    <select name="page_mtb_bikecat">
+                      <option value="Road">Road Bike</option>
+                      <option value="Mountain">Mountain Bike</option>
+                      <option value="Hybrid">Hybrid</option>
+                      <option value="Classic">Classic</option>
+                    </select>
+                        <br/><br/>
+      
+      <button class="button">Save Changes</button>
+      
+    </form>
+    
+    <% }); %>
+  
+  </div>
+ 
+</div>
+
+
+<% include ../partials/footer.ejs %>

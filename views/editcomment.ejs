@@ -1,0 +1,42 @@
+<% include ../partials/header.ejs %>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Edit your comments</h3>
+    <p><a href="/comments" style="width: 20%" class="w3-button w3-light-grey w3-block">Return to Comments page</a></p>
+    
+    <% res.forEach(function(indcomm) {%> 
+  
+   <form accept-charset="UTF-8" action="/editcomment/<%= indcomm.id %>" method="post">  
+      
+      <label for="page_commentname">Your Name</label>
+        <input class="w3-input w3-section w3-border" name="page_commentname" type="text" value="<%= indcomm.name %>" />
+                    
+                    <label for="page_custnum">Customer Number</label>
+                    <input class="w3-input w3-section w3-border" name="page_custnum" type="text" value="<%= indcomm.custnum %>" />
+                    
+                    <label for="page_emailadd">Email Address</label> 
+                    <input class="w3-input w3-section w3-border" name="page_emailadd" type="text" value="<%= indcomm.emailadd %>" />
+                    
+                    <label for="page_feedback">Comment</label> 
+                    <input class="w3-input w3-section w3-border" name="page_feedback" type="text" value="<%= indcomm.feedback %>" />
+                    
+                    <label for="page_rating">Rating</label> 
+                    <input class="w3-input w3-section w3-border" name="page_rating" type="text" value="<%= indcomm.rating %>" />
+      
+      
+      <button class="button">Save details</button>
+      
+    </form>
+    
+    <% }) %>
+  
+  </div>
+ 
+</div>
+
+
+<% include ../partials/footer.ejs %>

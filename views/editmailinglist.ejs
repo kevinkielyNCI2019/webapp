@@ -1,0 +1,34 @@
+<% include ../partials/header.ejs %>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Edit your comments</h3>
+    <p><a href="/comments" style="width: 20%" class="w3-button w3-light-grey w3-block">Return to Comments page</a></p>
+    
+    <% res.forEach(function(indml) {%> 
+  
+   <form accept-charset="UTF-8" action="/editmailinglist/<%= indml.id %>" method="post">  
+      
+      <label for="page_ml_name">Your Name</label>
+        <input class="w3-input w3-section w3-border" name="page_ml_name" type="text" value="<%= indml.name %>" />
+                    
+                    <label for="page_ml_emailadd">Email Address</label> 
+                    <input class="w3-input w3-section w3-border" name="page_ml_emailadd" type="text" value="<%= indml.emailadd %>" />
+                    
+      
+      
+      <button class="button">Save details</button>
+      
+    </form>
+    
+    <% }) %>
+  
+  </div>
+ 
+</div>
+
+
+<% include ../partials/footer.ejs %>

@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "custnum": "123458",
+        "emailadd": "john@doe.ie",
+        "feedback": "Very good online store with lots of products!",
+        "rating": "4"
+    },
+    {
+        "id": 2,
+        "name": "Kevin Kiely",
+        "custnum": "321465",
+        "emailadd": "kevin@kevin.com",
+        "feedback": "This is a great website for bikes!",
+        "rating": "5"
+    },
+    {
+        "id": 3,
+        "name": "John Jones",
+        "custnum": "456123",
+        "emailadd": "john@jones.com",
+        "feedback": "Great website well done",
+        "rating": "3"
+    }
+]

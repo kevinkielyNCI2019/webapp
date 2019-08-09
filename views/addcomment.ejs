@@ -1,0 +1,39 @@
+<% include ../partials/header.ejs %>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Add some Feedback!</h3>
+  
+   <form accept-charset="UTF-8" action="/addcomment" method="post">  
+      
+                    <label for="page_commentname">Your Name</label>
+                    <input class="w3-input w3-section w3-border" name="page_commentname" type="text" placeholder="Enter your name", required pattern='[A-Za-z\s]{1,35}' title='Please enter only letters' />
+                    
+                    <label for="page_custnum">Customer Number</label>
+                    <input class="w3-input w3-section w3-border" name="page_custnum" type="text" placeholder="Enter your customer number", required pattern='[0-9]{6}' title='Please enter your 6 digit customer number'  />
+                    
+                    <label for="page_emailadd">Email Address</label> 
+                    <input class="w3-input w3-section w3-border" name="page_emailadd" type="text" placeholder="Enter your email address", required pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' title='Please enter valid email address' />
+                    
+                    <label for="page_feedback">Comment</label> 
+                    <input class="w3-input w3-section w3-border" name="page_feedback" type="text" placeholder="Enter your comments", required pattern='[A-Za-z\s]{1,35}' title='Please enter only letters in your comments' />
+                    
+                    <label for="page_rating">Rating</label> 
+                    <input class="w3-input w3-section w3-border" name="page_rating" type="text" placeholder="Enter your rating (out of 5)", required pattern='[0-5]{1}' title='Please enter number between 0 and 5'/>
+      
+      
+      <button class="button">Add</button>
+      
+    </form>
+  
+  </div>
+  
+  <a href="/comments" class="w3-button w3-black">View all feedback</a>
+ 
+</div>
+
+
+<% include ../partials/footer.ejs %>

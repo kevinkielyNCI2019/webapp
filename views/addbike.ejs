@@ -1,0 +1,44 @@
+<% include ../partials/header.ejs %>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- Project Section -->
+  <div class="w3-container w3-padding-32" id="projects">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Add a new Mountain Bike</h3>
+  
+   <form  accept-charset="UTF-8" style="display: inline-block; width: 90%;" action="/addbike" method="post" enctype="multipart/form-data" id="uploadForm" ref="uploadForm">  
+      
+                    <label for="page_mtb_bikename">Bike Name:</label>
+                    <input class="w3-input w3-section w3-border" name="page_mtb_bikename" type="text" placeholder="Enter the bike name", required pattern='[A-Za-z\s]{1,35}' title='Please enter only letters'  />
+                    
+                    <label for="page_mtb_bikeprice">Bike Price:</label> 
+                    <input class="w3-input w3-section w3-border" name="page_mtb_bikeprice" type="text" placeholder="Enter bike price", required pattern='[0-9]{1,4}' title='Please enter numbers only'  />
+                    
+                    <label for="page_mtb_bikeimage">Bike Image:</label>
+                    <input type="file" class="button" type="text" name="sampleFile"/>
+                    
+                    <br/><br/>
+                    <label for="page_mtb_bikedesc">Bike Description:</label> 
+                    <input class="w3-input w3-section w3-border" name="page_mtb_bikedesc" type="text" placeholder="Enter bike description", required pattern='[A-Za-z\s]{1,255}' title='Please enter only letters in your comments'  />
+                    
+                    <label for="page_mtb_bikecat">Bike Category:</label>
+                    <!--<input class="w3-input w3-section w3-border" name="page_mtb_bikecat" type="text" placeholder="Enter the bike category", required pattern='[A-Za-z\s]{1,35}' title='Please enter only letters'  /> -->
+                    <select name="page_mtb_bikecat">
+                      <option value="road">Road Bike</option>
+                      <option value="mountain">Mountain Bike</option>
+                      <option value="hybrid">Hybrid</option>
+                      <option value="classic">Classic</option>
+                    </select>
+                        <br/><br/>
+      
+      <button class="button">Add new bike</button>
+      
+    </form>
+  
+  </div>
+ 
+</div>
+
+
+<% include ../partials/footer.ejs %>
