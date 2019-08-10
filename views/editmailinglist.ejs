@@ -13,10 +13,10 @@
    <form accept-charset="UTF-8" action="/editmailinglist/<%= indml.id %>" method="post">  
       
       <label for="page_ml_name">Your Name</label>
-        <input class="w3-input w3-section w3-border" name="page_ml_name" type="text" value="<%= indml.name %>" />
+        <input class="w3-input w3-section w3-border" name="page_ml_name" type="text" value="<%= indml.name %>", required pattern='[A-Za-z\s]{1,35}' title='Please enter only letters' />
                     
                     <label for="page_ml_emailadd">Email Address</label> 
-                    <input class="w3-input w3-section w3-border" name="page_ml_emailadd" type="text" value="<%= indml.emailadd %>" />
+                    <input class="w3-input w3-section w3-border" name="page_ml_emailadd" type="text" value="<%= indml.emailadd %>", required pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' title='Please enter valid email address'  />
                     
       
       

@@ -13,19 +13,19 @@
    <form accept-charset="UTF-8" action="/editcomment/<%= indcomm.id %>" method="post">  
       
       <label for="page_commentname">Your Name</label>
-        <input class="w3-input w3-section w3-border" name="page_commentname" type="text" value="<%= indcomm.name %>" />
+        <input class="w3-input w3-section w3-border" name="page_commentname" type="text" value="<%= indcomm.name %>", required pattern='[A-Za-z\s]{1,35}' title='Please enter only letters'  />
                     
                     <label for="page_custnum">Customer Number</label>
-                    <input class="w3-input w3-section w3-border" name="page_custnum" type="text" value="<%= indcomm.custnum %>" />
+                    <input class="w3-input w3-section w3-border" name="page_custnum" type="text" value="<%= indcomm.custnum %>", required pattern='[0-9]{6}' title='Please enter your 6 digit customer number' />
                     
                     <label for="page_emailadd">Email Address</label> 
-                    <input class="w3-input w3-section w3-border" name="page_emailadd" type="text" value="<%= indcomm.emailadd %>" />
+                    <input class="w3-input w3-section w3-border" name="page_emailadd" type="text" value="<%= indcomm.emailadd %>", required pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$' title='Please enter valid email address' />
                     
                     <label for="page_feedback">Comment</label> 
-                    <input class="w3-input w3-section w3-border" name="page_feedback" type="text" value="<%= indcomm.feedback %>" />
+                    <input class="w3-input w3-section w3-border" name="page_feedback" type="text" value="<%= indcomm.feedback %>", required pattern='[A-Za-z\s]{1,35}' title='Please enter only letters in your comments'  />
                     
                     <label for="page_rating">Rating</label> 
-                    <input class="w3-input w3-section w3-border" name="page_rating" type="text" value="<%= indcomm.rating %>" />
+                    <input class="w3-input w3-section w3-border" name="page_rating" type="text" value="<%= indcomm.rating %>", required pattern='[0-5]{1}' title='Please enter number between 0 and 5'/>
       
       
       <button class="button">Save details</button>
